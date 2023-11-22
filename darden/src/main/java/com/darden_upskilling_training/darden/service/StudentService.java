@@ -16,6 +16,7 @@ public class StudentService {
 
 	public StudentEntity addStudent(StudentEntity s) {
 		studentrepo.save(s);
+		System.out.println("inserting method");
 		return s;
 	}
 
