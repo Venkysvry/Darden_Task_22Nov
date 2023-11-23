@@ -1,5 +1,11 @@
 package com.darden_upskilling_training.darden;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -10,11 +16,6 @@ import com.darden_upskilling_training.darden.model.StudentDao;
 import com.darden_upskilling_training.darden.model.StudentEntity;
 import com.darden_upskilling_training.darden.repositories.StudentRepo;
 import com.darden_upskilling_training.darden.service.StudentService;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
-
-import java.util.*;
 
 @ExtendWith(MockitoExtension.class)
 class StudentServiceTest {
@@ -52,7 +53,7 @@ class StudentServiceTest {
 		StudentEntity s=new StudentEntity(1,"venkatesh",25,100000);
 		StudentDao s1=new StudentDao(1,"sathish",26,1000000);
 		when(sRepo.findById(1)).thenReturn(s);
-		when(sRepo.save(s)).thenReturn(s);
+		when(sRepo.save(s)).thenReturn(s); 
 		StudentEntity s2=sservice.update(s1);
 		assertEquals(s1.getName(), s2.getName());
 	}

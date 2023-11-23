@@ -16,10 +16,10 @@ public class StudentService {
 
 	public StudentEntity addStudent(StudentEntity s) {
 		studentrepo.save(s);
-		System.out.println("inserting method");
+		System.out.println("insert method");
 		return s;
 	}
-
+  
 	public List<StudentEntity> getDetails() {
 		return studentrepo.findAll();
 	}
